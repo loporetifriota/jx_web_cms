@@ -81,15 +81,17 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
 .home-main-section {
   position: relative;
-  max-width: 1322px;
+  width: min(100%, 1680px);
+  max-width: 1680px;
   margin: -18px auto 0;
   z-index: 10;
-  padding-bottom: 24px;
+  padding: 0 clamp(24px, 4vw, 72px) 24px;
+  box-sizing: border-box;
 }
 
 .home-action-wrap {
-  width: 1030px;
-  max-width: 96%;
+  width: min(100%, 1280px);
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -98,17 +100,33 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   margin-top: 14px;
 }
 
-.home-news-wrap :deep(.e-con-inner) {
-  width: 100%;
-  max-width: 1322px;
-  margin: 0 auto;
+.home-news-wrap :deep(.e-con-inner),
+.home-news-wrap :deep(.elementor-element.elementor-element-0322661),
+.home-news-wrap :deep(.news-grid) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0;
+}
+
+.home-news-wrap :deep(.elementor-element.elementor-element-0322661),
+.home-news-wrap :deep(.news-grid) {
+  --width: 100% !important;
+}
+
+@media (min-width: 768px) {
+  .home-news-wrap :deep(.elementor-element.elementor-element-0322661),
+  .home-news-wrap :deep(.news-grid) {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) !important;
+    --e-con-grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) !important;
+  }
 }
 
 .news-grid {
   width: 100%;
-  margin: 0 auto;
+  max-width: none;
+  margin: 0;
   align-items: start;
-  gap: 30px;
+  gap: clamp(30px, 4vw, 72px);
 }
 
 .feature-wrap {
@@ -129,13 +147,16 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   }
 
   .home-main-section {
-    margin-top: 8px;
+    width: 100%;
     max-width: 100%;
+    margin-top: 8px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .news-grid {
-    width: 94%;
-    gap: 16px;
+    width: 100%;
+    gap: 24px;
   }
 
   .feature-wrap {

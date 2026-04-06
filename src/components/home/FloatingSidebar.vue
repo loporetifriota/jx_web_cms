@@ -1,14 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import { popupButtons } from '../../data/menu'
-
-const collapsed = ref(false)
 </script>
 
 <template>
-  <div class="toggle-button" :class="{ collapsed }" @click="collapsed = !collapsed"></div>
-
-  <div class="fixed-popup-menu" :class="{ collapsed }">
+  <div class="fixed-popup-menu">
     <div class="popup-menu-container">
       <div class="popup-menu-bg"></div>
       <a
@@ -29,9 +24,5 @@ const collapsed = ref(false)
 <style scoped>
 .fixed-popup-menu {
   right: 6px;
-}
-
-.toggle-button {
-  right: 126px;
 }
 </style>

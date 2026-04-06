@@ -28,23 +28,33 @@ defineProps<{
 
 <style scoped>
 .elementor-post {
-  padding: 3px 10px;
+  padding: 6px 10px;
 }
 
 .elementor-post__title {
   margin: 0;
-  line-height: 1.15;
+  line-height: 1.25;
 }
 
 .elementor-post__title a {
-  font-size: 11px;
+  font-size: 16px;
   color: #ffffff;
   letter-spacing: 0.1px;
 }
 
 .elementor-post-date {
-  font-size: 10px;
+  font-size: 14px;
   color: #f2c044;
   font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .elementor-post__title a {
+    font-size: 14px;
+  }
+
+  .elementor-post-date {
+    font-size: 14px;
+  }
 }
 </style>
