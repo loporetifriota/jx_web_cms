@@ -15,9 +15,9 @@ defineProps<{
       role="listitem"
     >
       <div class="elementor-post__text">
-        <h1 class="elementor-post__title">
+        <h3 class="elementor-post__title">
           <a :href="post.href">{{ post.title }}</a>
-        </h1>
+        </h3>
         <div class="elementor-post__meta-data">
           <span class="elementor-post-date">{{ post.date }}</span>
         </div>

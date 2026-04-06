@@ -17,22 +17,24 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
         <main id="main" class="site-main">
           <div class="elementor elementor-3797">
             <HeroBanner />
-            <div class="elementor-element elementor-element-14dfca0 e-con-full content e-flex e-con e-parent e-lazyloaded home-main-section">
-              <div class="elementor-element elementor-element-fb4b4d5 e-con-full e-flex e-con e-child home-action-wrap">
-                <ActionMenu />
-              </div>
-              <div class="elementor-element elementor-element-416175b e-flex e-con-boxed e-con e-child home-news-wrap">
-                <div class="e-con-inner">
-                  <div class="elementor-element elementor-element-0322661 e-grid e-con-full e-con e-child news-grid">
-                    <ImageCarousel />
-                    <NewsTabs />
+            <div class="home-main-bg">
+              <div class="elementor-element elementor-element-14dfca0 e-con-full content e-flex e-con e-parent e-lazyloaded home-main-section">
+                <div class="elementor-element elementor-element-fb4b4d5 e-con-full e-flex e-con e-child home-action-wrap">
+                  <ActionMenu />
+                </div>
+                <div class="elementor-element elementor-element-416175b e-flex e-con-boxed e-con e-child home-news-wrap">
+                  <div class="e-con-inner">
+                    <div class="elementor-element elementor-element-0322661 e-grid e-con-full e-con e-child news-grid">
+                      <ImageCarousel />
+                      <NewsTabs />
+                    </div>
                   </div>
                 </div>
+                <div class="feature-wrap">
+                  <FeatureShowcase />
+                </div>
+                <FloatingSidebar />
               </div>
-              <div class="feature-wrap">
-                <FeatureShowcase />
-              </div>
-              <FloatingSidebar />
             </div>
           </div>
         </main>
@@ -44,7 +46,7 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
 <style scoped>
 .site-content {
-  padding-top: 64px;
+  padding-top: 74px;
   width: 100%;
 }
 
@@ -55,16 +57,32 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   padding-right: 8px;
 }
 
+.home-container > .site-main {
+  width: 100%;
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
 .site-main,
 #main,
 .elementor,
 .elementor-3797 {
   width: 100%;
+  max-width: 100%;
+}
+
+.home-main-bg {
+  position: relative;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background: url('/images/bg-banner23-2-35d00803.png') center top / cover no-repeat;
 }
 
 .home-main-section {
   position: relative;
-  margin-top: -18px;
+  max-width: 1322px;
+  margin: -18px auto 0;
   z-index: 10;
   padding-bottom: 24px;
 }
@@ -101,7 +119,7 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
 @media (max-width: 1024px) {
   .site-content {
-    padding-top: 56px;
+    padding-top: 62px;
   }
 
   .home-container {
@@ -112,6 +130,7 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
   .home-main-section {
     margin-top: 8px;
+    max-width: 100%;
   }
 
   .news-grid {
@@ -128,11 +147,18 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
 @media (max-width: 767px) {
   .site-content {
-    padding-top: 48px;
+    padding-top: 54px;
+  }
+
+  .home-main-bg {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .home-main-section {
     margin-top: 14px;
+    max-width: 100%;
   }
 
   .home-action-wrap {
