@@ -25,4 +25,18 @@ import { popupButtons } from '../../data/menu'
 .fixed-popup-menu {
   right: 6px;
 }
+
+@media (max-width: 1024px) {
+  .fixed-popup-menu {
+    right: 4px;
+    transform: translateY(-50%) scale(0.9);
+    transform-origin: right center;
+  }
+}
+
+@media (max-width: 768px) {
+  .fixed-popup-menu {
+    display: none;
+  }
+}
 </style>

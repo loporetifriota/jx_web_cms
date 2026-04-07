@@ -19,7 +19,7 @@ import { homeSlides } from '../../data/features'
       >
         <SwiperSlide v-for="slide in homeSlides" :key="slide">
           <figure class="swiper-slide-inner">
-            <img class="swiper-slide-image" :src="slide" alt="Slide" />
+            <img class="swiper-slide-image" :src="slide" alt="Ảnh nổi bật Vẹn Nguyên Ký Ức" />
           </figure>
         </SwiperSlide>
       </Swiper>

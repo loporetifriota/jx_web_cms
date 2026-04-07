@@ -15,6 +15,7 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
     <div id="content" class="site-content">
       <div class="ast-container home-container">
         <main id="main" class="site-main">
+          <h1 class="seo-page-title">Vẹn Nguyên Ký Ức - Trang chủ game Võ Lâm</h1>
           <div class="elementor elementor-3797">
             <HeroBanner />
             <div class="home-main-bg">
@@ -53,8 +54,8 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 .home-container {
   width: 100%;
   max-width: 1440px;
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .home-container > .site-main {
@@ -71,11 +72,24 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   max-width: 100%;
 }
 
+.seo-page-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .home-main-bg {
   position: relative;
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
+  width: calc(100vw + 40px);
+  margin-left: calc(50% - 50vw - 20px);
+  margin-right: calc(50% - 50vw - 20px);
+  margin-top: -32px;
   background: url('/images/bg-banner23-2-35d00803.png') center top / cover no-repeat;
 }
 
@@ -85,14 +99,25 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   max-width: 1680px;
   margin: -18px auto 0;
   z-index: 10;
-  padding: 0 clamp(24px, 4vw, 72px) 24px;
+  --justify-content: flex-start;
+  --align-items: stretch;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  --padding-block-start: 0px;
+  --padding-block-end: 0px;
+  padding: 0 clamp(12px, 2vw, 32px) 24px;
   box-sizing: border-box;
 }
-
 .home-action-wrap {
   width: min(100%, 1280px);
   max-width: 1280px;
+  min-height: 0 !important;
   margin: 0 auto;
+  --min-height: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
 }
 
 .home-news-wrap {
@@ -132,6 +157,7 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 .feature-wrap {
   width: 392px;
   margin: 56px 0 0 auto;
+  padding-bottom: 0;
   transform: translateX(-74px);
 }
 
@@ -142,14 +168,16 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
   .home-container {
     width: 100%;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .home-main-section {
     width: 100%;
     max-width: 100%;
-    margin-top: 8px;
+    margin-top: 0;
+    --justify-content: flex-start;
+    --align-items: stretch;
     padding-left: 18px;
     padding-right: 18px;
   }
@@ -168,22 +196,36 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
 @media (max-width: 767px) {
   .site-content {
-    padding-top: 54px;
+    padding-top: 50px;
   }
 
   .home-main-bg {
-    width: 100%;
-    margin-left: 0;
-    margin-right: 0;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
   }
 
   .home-main-section {
-    margin-top: 14px;
+    margin-top: 0 !important;
     max-width: 100%;
+    --justify-content: flex-start;
+    --align-items: stretch;
+    padding-left: 16px;
+    padding-right: 16px;
   }
 
   .home-action-wrap {
     width: 100%;
+    margin-top: 18px;
+    --min-height: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --justify-content: flex-start;
+    --align-items: stretch;
+  }
+
+  .home-news-wrap {
+    margin-top: 6px;
   }
 
   .news-grid {
@@ -192,6 +234,46 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 
   .feature-wrap {
     width: 94%;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-content {
+    padding-top: 46px;
+  }
+
+  .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home-main-section {
+    margin-top: 0 !important;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-content {
+    padding-top: 44px;
+  }
+
+  .home-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .home-main-bg {
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+  }
+
+  .home-main-section {
+    margin-top: 0 !important;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 }
 </style>
