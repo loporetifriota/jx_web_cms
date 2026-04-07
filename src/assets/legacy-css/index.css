@@ -1,0 +1,6 @@
+/* Core legacy snapshot (includes Astra base + extracted inline styles) */
+@import './extracted-styles.css';
+
+/* Page-specific legacy styles still required by current homepage classes */
+@import './post-3797.css';
+@import './widget-posts.css';

@@ -3,8 +3,7 @@ import AppHeader from '../components/layout/AppHeader.vue'
 import AppFooter from '../components/layout/AppFooter.vue'
 import HeroBanner from '../components/home/HeroBanner.vue'
 import ActionMenu from '../components/home/ActionMenu.vue'
-import ImageCarousel from '../components/home/ImageCarousel.vue'
-import NewsTabs from '../components/home/NewsTabs.vue'
+import HomeNewsSection from '../components/home/HomeNewsSection.vue'
 import FeatureShowcase from '../components/home/FeatureShowcase.vue'
 import FloatingSidebar from '../components/home/FloatingSidebar.vue'
 </script>
@@ -20,20 +19,9 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
             <HeroBanner />
             <div class="home-main-bg">
               <div class="elementor-element elementor-element-14dfca0 e-con-full content e-flex e-con e-parent e-lazyloaded home-main-section">
-                <div class="elementor-element elementor-element-fb4b4d5 e-con-full e-flex e-con e-child home-action-wrap">
-                  <ActionMenu />
-                </div>
-                <div class="elementor-element elementor-element-416175b e-flex e-con-boxed e-con e-child home-news-wrap">
-                  <div class="e-con-inner">
-                    <div class="elementor-element elementor-element-0322661 e-grid e-con-full e-con e-child news-grid">
-                      <ImageCarousel />
-                      <NewsTabs />
-                    </div>
-                  </div>
-                </div>
-                <div class="feature-wrap">
-                  <FeatureShowcase />
-                </div>
+                <ActionMenu />
+                <HomeNewsSection />
+                <FeatureShowcase />
                 <FloatingSidebar />
               </div>
             </div>
@@ -108,59 +96,6 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
   padding: 0 clamp(12px, 2vw, 32px) 24px;
   box-sizing: border-box;
 }
-.home-action-wrap {
-  width: min(100%, 1280px);
-  max-width: 1280px;
-  min-height: 0 !important;
-  margin: 0 auto;
-  --min-height: 0px;
-  --padding-top: 0px;
-  --padding-bottom: 0px;
-  align-items: stretch !important;
-  justify-content: flex-start !important;
-}
-
-.home-news-wrap {
-  width: 100%;
-  margin-top: 14px;
-}
-
-.home-news-wrap :deep(.e-con-inner),
-.home-news-wrap :deep(.elementor-element.elementor-element-0322661),
-.home-news-wrap :deep(.news-grid) {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0;
-}
-
-.home-news-wrap :deep(.elementor-element.elementor-element-0322661),
-.home-news-wrap :deep(.news-grid) {
-  --width: 100% !important;
-}
-
-@media (min-width: 768px) {
-  .home-news-wrap :deep(.elementor-element.elementor-element-0322661),
-  .home-news-wrap :deep(.news-grid) {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) !important;
-    --e-con-grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr) !important;
-  }
-}
-
-.news-grid {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  align-items: start;
-  gap: clamp(30px, 4vw, 72px);
-}
-
-.feature-wrap {
-  width: 392px;
-  margin: 56px 0 0 auto;
-  padding-bottom: 0;
-  transform: translateX(-74px);
-}
-
 @media (max-width: 1024px) {
   .site-content {
     padding-top: 62px;
@@ -182,16 +117,6 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
     padding-right: 18px;
   }
 
-  .news-grid {
-    width: 100%;
-    gap: 24px;
-  }
-
-  .feature-wrap {
-    width: 390px;
-    margin: 36px auto 0;
-    transform: none;
-  }
 }
 
 @media (max-width: 767px) {
@@ -214,27 +139,6 @@ import FloatingSidebar from '../components/home/FloatingSidebar.vue'
     padding-right: 16px;
   }
 
-  .home-action-wrap {
-    width: 100%;
-    margin-top: 18px;
-    --min-height: 0px;
-    --padding-top: 0px;
-    --padding-bottom: 0px;
-    --justify-content: flex-start;
-    --align-items: stretch;
-  }
-
-  .home-news-wrap {
-    margin-top: 6px;
-  }
-
-  .news-grid {
-    width: 100%;
-  }
-
-  .feature-wrap {
-    width: 94%;
-  }
 }
 
 @media (max-width: 600px) {

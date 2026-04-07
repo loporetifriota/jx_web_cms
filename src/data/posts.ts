@@ -4,7 +4,9 @@ export interface PostItem {
   date: string
 }
 
-export const tabs = ['Tin Tức', 'Sự Kiện', 'Tính Năng', 'Hướng Dẫn']
+export const tabs = ['Tin Tức', 'Sự Kiện', 'Tính Năng', 'Hướng Dẫn'] as const
+
+export type TabKey = (typeof tabs)[number]
 
 const samplePosts: PostItem[] = [
   { title: 'Cẩm Nang Các Điểm Lưu Rương', href: 'https://vennguyenkyuc.vn/5866-2', date: '07/02/2026' },
@@ -17,7 +19,7 @@ const samplePosts: PostItem[] = [
   { title: 'Giới thiệu môn phái: Thúy Yên Môn', href: 'https://vennguyenkyuc.vn/gioi-thieu-mon-phai-thuy-yen-mon', date: '15/01/2026' },
 ]
 
-export const tabPosts: Record<string, PostItem[]> = {
+export const tabPosts: Record<TabKey, PostItem[]> = {
   'Tin Tức': samplePosts,
   'Sự Kiện': samplePosts,
   'Tính Năng': samplePosts,

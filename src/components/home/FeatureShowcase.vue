@@ -1,28 +1,16 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
 import { featureImages } from '../../data/features'
-
-const activeId = ref(featureImages[0].id)
-const activeImage = computed(() => featureImages.find((item) => item.id === activeId.value) ?? featureImages[0])
 </script>
 
 <template>
-  <div class="container feature-shell">
-    <div class="left-column feature-preview">
-      <img :src="activeImage.image" class="main-image active" :id="activeImage.id" :alt="activeImage.alt" />
-    </div>
-
-    <div class="right-column feature-panel">
-      <img class="title-image" src="/images/tinh-nang-dac-sac-88b4c5d9.png" alt="Tính năng đặc sắc" />
-      <div class="button-list">
-        <div
-          v-for="feature in featureImages"
-          :key="feature.id"
-          class="btn-feature"
-          :class="{ active: activeId === feature.id }"
-          @click="activeId = feature.id"
-        >
-          <img :src="feature.buttonImage" :alt="feature.alt" />
+  <div class="feature-wrap">
+    <div class="container feature-shell">
+      <div class="right-column feature-panel">
+        <img class="title-image" src="/images/tinh-nang-dac-sac-88b4c5d9.png" alt="Tính năng đặc sắc" />
+        <div class="button-list">
+          <button v-for="feature in featureImages" :key="feature.id" class="btn-feature" type="button">
+            <img :src="feature.buttonImage" :alt="feature.alt" />
+          </button>
         </div>
       </div>
     </div>
@@ -30,13 +18,16 @@ const activeImage = computed(() => featureImages.find((item) => item.id === acti
 </template>
 
 <style scoped>
+.feature-wrap {
+  width: 392px;
+  margin: 56px 0 0 auto;
+  padding-bottom: 0;
+  transform: translateX(-74px);
+}
+
 .feature-shell {
   padding: 0;
   align-items: flex-start;
-}
-
-.feature-preview {
-  display: none;
 }
 
 .feature-panel {
@@ -57,10 +48,25 @@ const activeImage = computed(() => featureImages.find((item) => item.id === acti
 }
 
 .btn-feature {
+  display: block;
   transform-origin: center;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
 }
 
-.btn-feature.active {
-  transform: scale(1.02);
+@media (max-width: 1024px) {
+  .feature-wrap {
+    width: 390px;
+    margin: 36px auto 0;
+    transform: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .feature-wrap {
+    width: 94%;
+  }
 }
 </style>

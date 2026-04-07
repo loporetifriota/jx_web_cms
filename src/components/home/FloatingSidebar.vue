@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { popupButtons } from '../../data/menu'
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+}
 </script>
 
 <template>
@@ -16,7 +20,7 @@ import { popupButtons } from '../../data/menu'
       >
         <img :src="button.image" :alt="button.alt" />
       </a>
-      <a href="#" class="top-button-overlay"></a>
+      <button type="button" class="top-button-overlay" aria-label="Quay lên đầu trang" @click="scrollToTop"></button>
     </div>
   </div>
 </template>

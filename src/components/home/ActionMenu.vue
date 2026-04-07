@@ -3,14 +3,39 @@ import { actionMenu } from '../../data/menu'
 </script>
 
 <template>
-  <div class="menu-container">
-    <a v-for="item in actionMenu" :key="item.image" :href="item.href" :class="item.className">
-      <img :src="item.image" :alt="item.alt" />
-    </a>
+  <div class="home-action-wrap">
+    <div class="menu-container">
+      <a
+      v-for="item in actionMenu"
+      :key="item.image"
+      :href="item.href"
+      :target="item.external ? '_blank' : undefined"
+      :rel="item.external ? 'nofollow noopener noreferrer' : undefined"
+      :class="[
+        'menu-item',
+        { large: item.size === 'large' },
+        { red: item.highlighted }
+      ]"
+    >
+        <img :src="item.image" :alt="item.alt" />
+      </a>
+    </div>
   </div>
 </template>
 
 <style scoped>
+.home-action-wrap {
+  width: min(100%, 1280px);
+  max-width: 1280px;
+  min-height: 0 !important;
+  margin: 0 auto;
+  --min-height: 0px;
+  --padding-top: 0px;
+  --padding-bottom: 0px;
+  align-items: stretch !important;
+  justify-content: flex-start !important;
+}
+
 .menu-container {
   width: 100%;
   display: flex;
@@ -71,6 +96,16 @@ import { actionMenu } from '../../data/menu'
 }
 
 @media (max-width: 768px) {
+  .home-action-wrap {
+    width: 100%;
+    margin-top: 18px;
+    --min-height: 0px;
+    --padding-top: 0px;
+    --padding-bottom: 0px;
+    --justify-content: flex-start;
+    --align-items: stretch;
+  }
+
   .menu-container {
     flex-wrap: wrap;
     justify-content: center;
